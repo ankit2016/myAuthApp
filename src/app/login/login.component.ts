@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.LoginService.getAuth(this.username, this.password).subscribe((res :any)=>{
       console.log("login responce", res);
       if(res.status == '$200'){
-        this.route.navigate(['/']);
+        this.route.navigate(['/singup']);
       
       }else if (res.status == '$600'){
         alert("Incorrect username/passowrd");
