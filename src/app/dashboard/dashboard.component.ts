@@ -12,4 +12,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+logout(){
+  localStorage.removeItem('currentUSer');
+  window.location.reload();
+}
+
+
 }

@@ -28,11 +28,20 @@ export class AuthService {
         if(res.status == '$200'){
           
           console.log("from service", res);
-          
+          localStorage.setItem('currentUSer', JSON.stringify(res));
         }
         return res;
      }));
 
+  }
+
+  isLogedIn(){
+   
+    var user = JSON.parse(localStorage.getItem('currentUSer'));
+    console.log("get user", user);
+    return user;
+    
+    
   }
 
 }

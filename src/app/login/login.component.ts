@@ -21,12 +21,24 @@ export class LoginComponent implements OnInit {
     this.LoginService.getAuth(this.username, this.password).subscribe((res :any)=>{
       console.log("login responce", res);
       if(res.status == '$200'){
-        alert(res.status);
+        this.route.navigate(['/']);
+      
+      }else if (res.status == '$600'){
+        alert("Incorrect username/passowrd");
+      }else {
+        alert("Login Failed");
       }
       
       
     }, error =>{
       console.log("error", error);
+      alert("Login Failed");
+    })
+  }
+
+  getUser(){
+    this.LoginService.isLogedIn().subscribe((res:any) => {
+      console.log(res);
     })
   }
 
