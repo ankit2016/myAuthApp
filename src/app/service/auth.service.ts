@@ -38,7 +38,7 @@ export class AuthService {
   isLogedIn(){
    
     var user = JSON.parse(localStorage.getItem('currentUSer'));
-    console.log("get user", user);
+    console.log("get user", user); 
     return user;
     
     
