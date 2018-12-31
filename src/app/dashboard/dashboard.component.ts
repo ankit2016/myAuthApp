@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { Route, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { Observable, Subscriber, empty, EMPTY } from 'rxjs';
-import { DashboardService } from '../service/dashboard/dashboard.service';
+import { DashboardService } from '../service/dashboardServices/dashboard.service';
 
 
 @Component({
@@ -12,20 +8,16 @@ import { DashboardService } from '../service/dashboard/dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(private route: Route) { }
+  listArray : any;
+  constructor(private dashboardsvs: DashboardService) { }
 
   ngOnInit() {
-    this.route.data
-    .subscribe((data:any ) => {
-      console.log("Get User Details", data);  
-    });
+    this.dashboardsvs.getList().subscribe((res: any) =>{
+      console.log('Got Coach List', res);
+      this.listArray = res.results;
+    })
+
   }
-
-logout(){
-  localStorage.removeItem('currentUSer');
-  window.location.reload();
-}
-
-
+  
+  
 }
