@@ -1,2 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+.actionBtn{
+    margin-left: 10px;
+    padding: 2px;
+    font-size: 14px;
+    border-radius: 0;
+    background-color: transparent;
+    border: 0;
+    border-right: 1px solid;
+    padding-right: 7px;
+}
+.actionBtn:hover{
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+}
+.lastBtn{
+    border: 0 !important;
+}
+.success{
+    color: #b6f37a;
+}
+.error{
+   color: #ff6f6f; 
+}

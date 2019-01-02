@@ -12,7 +12,9 @@ export class LoginComponent implements OnInit {
   password: any;
  
   status: any;
-  constructor(private LoginService: AuthService, private route: Router) { }
+  constructor(private LoginService: AuthService, private route: Router) { 
+    localStorage.removeItem('currentUSer');
+  }
 
   ngOnInit() {
   }
