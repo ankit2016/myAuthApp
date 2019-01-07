@@ -24,5 +24,9 @@ export class DashboardService {
     return this.http.get("https://smartklinic.com/kmf-services/provider/listByPartner/"+this.user.httpHeaders.partnerId +"/0");
   }
 
+  getUserDetails(id){
+    return this.http.get("https://smartklinic.com/kmf-services/provider/fetch/"+ id);
+  }
+
 
 }

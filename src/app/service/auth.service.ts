@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -17,7 +18,7 @@ export class AuthService {
       'Content-Type':  'application/json'
     })
   };
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
  
   getAuth(username: string, pass: string){
 
@@ -40,8 +41,11 @@ export class AuthService {
     var user = JSON.parse(localStorage.getItem('currentUSer'));
     console.log("get user", user); 
     return user;
-    
-    
+  }
+
+  logout(){
+    localStorage.removeItem('currentUSer');
+    this.router.navigate(['/login']); 
   }
 
 }

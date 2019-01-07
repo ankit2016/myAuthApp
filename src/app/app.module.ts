@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {MatButtonModule, MatCheckboxModule, MatTabsModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -12,6 +12,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AuthInterceptor } from './service/http-interceptor.service';
 import { MypipePipe } from './pipe/mypipe.pipe';
+import { DetailComponent } from './dashboard/detail/detail.component';
+import { ListUserComponent } from './dashboard/list-user/list-user.component';
+import { DetailPageResolverService } from './service/dashboardServices/detail-page-resolver.service';
+
 
 @NgModule({
   declarations: [
@@ -20,17 +24,24 @@ import { MypipePipe } from './pipe/mypipe.pipe';
     SignupComponent,
     DashboardComponent,
     PagenotfoundComponent,
-    MypipePipe
+    MypipePipe,
+    DetailComponent,
+    ListUserComponent,
+
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatTabsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    DetailPageResolverService
   ],
   bootstrap: [AppComponent]
 })
