@@ -15,7 +15,7 @@ import { MypipePipe } from './pipe/mypipe.pipe';
 import { DetailComponent } from './dashboard/detail/detail.component';
 import { ListUserComponent } from './dashboard/list-user/list-user.component';
 import { DetailPageResolverService } from './service/dashboardServices/detail-page-resolver.service';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { DetailPageResolverService } from './service/dashboardServices/detail-pa
     HttpClientModule,
     MatButtonModule, 
     MatCheckboxModule,
-    MatTabsModule
+    MatTabsModule,
+    NgbModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
