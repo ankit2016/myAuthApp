@@ -16,6 +16,7 @@ import { DetailComponent } from './dashboard/detail/detail.component';
 import { ListUserComponent } from './dashboard/list-user/list-user.component';
 import { DetailPageResolverService } from './service/dashboardServices/detail-page-resolver.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { TestPipe } from './pipe/test.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MypipePipe,
     DetailComponent,
     ListUserComponent,
+    TestPipe,
 
     
   ],

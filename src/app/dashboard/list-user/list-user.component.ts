@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DashboardService } from '../../service/dashboardServices/dashboard.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
@@ -12,9 +12,12 @@ import { AuthService } from '../../service/auth.service';
 export class ListUserComponent implements OnInit {
   listArray : any;
   userName  = "Ankit Kumar";
+  @Input() appHeaderName:any;
   constructor(private dashboardsvs: DashboardService, private route: Router, private authSvc: AuthService) { }
 
   ngOnInit() {
+    //alert("Input From DashBoard:"+ this.appHeaderName);
+
     this.dashboardsvs.getList().subscribe((res: any) =>{
       //console.log('Got Coach List', res);
       this.listArray = res.results;

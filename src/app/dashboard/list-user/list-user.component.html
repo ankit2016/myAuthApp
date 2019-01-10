@@ -11,10 +11,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let list of listArray; index as i">
-      <th scope="row">{{i + 1}}</th>
+      <th scope="row">{{i + 1 }}</th>
       <td>{{list.firstName }}</td>
       <td>{{list.lastName}}</td>
-      <td>{{list.email}}</td>
+      <td>{{list.email | test: list.email}}</td>
       <td>{{list.mobileNo | mypipe: list.mobileNo}}</td>
       <td>
         <button type="button" class="btn btn-primary btn-xs actionBtn" (click)="getDetails(list.id)"><i class="fab fa-searchengin success"></i></button>

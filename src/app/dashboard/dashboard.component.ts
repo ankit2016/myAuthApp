@@ -12,6 +12,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class DashboardComponent implements OnInit {
   listArray : any;
+  appHeaderName: any = "Angular App";
   constructor(private dashboardsvs: DashboardService, private route: Router, private authSvc: AuthService) { }
 
   ngOnInit() {
