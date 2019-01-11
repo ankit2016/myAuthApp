@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatButtonModule, MatCheckboxModule, MatTabsModule } from '@angular/material';
+import { AmChartsModule } from "@amcharts/amcharts3-angular";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -40,7 +41,8 @@ import { TestPipe } from './pipe/test.pipe';
     MatButtonModule, 
     MatCheckboxModule,
     MatTabsModule,
-    NgbModule
+    NgbModule,
+    AmChartsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
