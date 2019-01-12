@@ -8,6 +8,7 @@ import {NgbPaginationModule, NgbAlertModule, NgbModal, ModalDismissReasons, NgbD
 export class SignupComponent implements OnInit {
   closeResult: string;
   myDate: any;
+  tochildData: any = "From Parent To Child";
   constructor(private modalService: NgbModal, private ngbDateParserFormatter: NgbDateParserFormatter) { }
 
   ngOnInit() {}

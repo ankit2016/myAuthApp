@@ -17,6 +17,7 @@ import { ListUserComponent } from './dashboard/list-user/list-user.component';
 import { DetailPageResolverService } from './service/dashboardServices/detail-page-resolver.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TestPipe } from './pipe/test.pipe';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TestPipe } from './pipe/test.pipe';
     DetailComponent,
     ListUserComponent,
     TestPipe,
+    TestComponent,
 
     
   ],
