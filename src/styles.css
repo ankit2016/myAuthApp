@@ -25,3 +25,7 @@
 .error{
    color: #ff6f6f; 
 }
+
+body{
+    background-color: #f5f5f5 !important;
+}

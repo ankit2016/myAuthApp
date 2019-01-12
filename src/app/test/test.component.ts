@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-test',
@@ -7,10 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TestComponent implements OnInit {
   @Input() data: any;
+
+  @Output() outData: any = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
     //alert('Data form parent:'+ this.data);
+this.outData.emit("From child to parent");
+
   }
 
 }

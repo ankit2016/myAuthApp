@@ -32,16 +32,95 @@
 
 <hr>
 
-<pre>{{closeResult}}  , {{myDate}}</pre> 
+<pre>{{closeResult}}  , {{myDate}}</pre>
 
 
 
 
 
-</div>-->
+</div>
 
+<app-test [data]="tochildData"></app-test> -->
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img src="../../assets/images/angular-3-logo-png-transparent.png" width="150px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<div id="chartdiv" style="width: 100%; height: 500px"></div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
 
-<app-test [data]="tochildData"></app-test>
+      <li class="nav-item">
+        <a class="nav-link " href="#">Demo</a>
+      </li>
+    </ul>
+
+    <div class="form-inline my-2 my-lg-0">
+      <input class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="logMeout()" value="Logout">
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluied">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-lg-3 col-md-12 tiles fadeIn">
+        <div class="tileHeader orange">
+          <p>Total Downloads</p>
+        </div>
+        <div id="chartdiv" style="height: 100%"></div>
+      </div>
+      <div class="col-lg-4 col-md-12 tiles fadeIn">
+        <div class="tileHeader blue">
+          <p>Country Performance</p>
+        </div>
+        <div id="chartdivDonut" style="height: 100%"></div>
+      </div>
+      <div class="col-lg-4 col-md-12 tiles fadeIn">
+        <div class="tileHeader green">
+          <p>Projection vs. Realization</p>
+        </div>
+        <div id="chartdivPie" style="height: 100%"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-lg-7 col-md-12 tiles fadeIn largerTiles">
+        <div class="tileHeader blue">
+          <p>Total Sales Value</p>
+        </div>
+        <div id="chartdivXYZ" style="height: 100%"></div>
+      </div>
+      <div class="col-lg-4 col-md-12 tiles fadeIn">
+        <div class="tileHeader voilet">
+          <p>Employee Performance</p>
+        </div>
+        <div class="tilesbody">
+         <div class="hits">
+            <div class="titleName">Server Hits</div>
+            <div class="numbercount"> {{counter}} </div>
+         </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

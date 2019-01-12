@@ -21,10 +21,10 @@ export class DetailPageResolverService implements Resolve<any> {
     //return this.DashSvc.getUserDetails(id);
     return this.DashSvc.getUserDetails(id).pipe(
       take(1),
-      mergeMap((crisis:any) => {
+      mergeMap((res:any) => {
        
-        if (crisis.status == '$200') {
-          return of(crisis);
+        if (res.status == '$200') {
+          return of(res);
         } else { // id not found
           this.router.navigate(['/']);
           return EMPTY;
