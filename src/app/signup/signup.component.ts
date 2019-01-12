@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
 
   ngAfterViewInit() {
     this.zone.runOutsideAngular(() => {
-      let chart = am4core.create("chartdiv", am4charts.PieChart);
+      let chart = am4core.create("chartdiv", am4charts.PieChart); 
 
       chart.paddingRight = 20;
 
