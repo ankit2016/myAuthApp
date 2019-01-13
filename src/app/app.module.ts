@@ -1,12 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {MatButtonModule, MatCheckboxModule, MatTabsModule } from '@angular/material';
+//Angular Material
+import {MatButtonModule, MatCheckboxModule, MatTabsModule, MatNativeDateModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+
+
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './service/auth.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,9 +27,10 @@ import { MypipePipe } from './pipe/mypipe.pipe';
 import { DetailComponent } from './dashboard/detail/detail.component';
 import { ListUserComponent } from './dashboard/list-user/list-user.component';
 import { DetailPageResolverService } from './service/dashboardServices/detail-page-resolver.service';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TestPipe } from './pipe/test.pipe';
 import { TestComponent } from './test/test.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -39,16 +51,29 @@ import { TestComponent } from './test/test.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    AmChartsModule,
+    
+    //Angular Material
     MatButtonModule, 
+    MatInputModule,
     MatCheckboxModule,
     MatTabsModule,
-    NgbModule,
-    AmChartsModule
+    MatInputModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatGridListModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    DetailPageResolverService
+    DetailPageResolverService,
+    MatDatepickerModule
   ],
   bootstrap: [AppComponent]
 })

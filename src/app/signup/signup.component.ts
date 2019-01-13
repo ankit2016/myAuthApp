@@ -23,13 +23,11 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   this.hitnane =  setInterval(() => {
-    this.counter += 5; 
-  }, 50);
+    this.counter = Math.floor((Math.random() * 100) + 1);
+  }, 500);
    }
-   ngOnDestroy() {
-    
-      clearInterval(this.hitnane);
-    
+   ngOnDestroy() { 
+    clearInterval(this.hitnane); 
   }
 
 
@@ -97,7 +95,7 @@ export class SignupComponent implements OnInit {
 
       chart.innerRadius = -25;
 
-      let axis = chart.xAxes.push(new am4charts.ValueAxis());
+      let axis = chart.xAxes.push(new am4charts.ValueAxis() as any);
       axis.min = 0;
       axis.max = 100;
       axis.strictMinMax = true;
