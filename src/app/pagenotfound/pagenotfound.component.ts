@@ -23,9 +23,16 @@ export class PagenotfoundComponent implements OnInit {
 
   ngOnInit() {
     this.ankit = "Keshri";
+    this.model2 = new Date();
   }
   DateValueChange(val){
     alert(val);
+  }
+  
+  model2: Date;
+
+  get today() {
+    return new Date();
   }
 
 }
