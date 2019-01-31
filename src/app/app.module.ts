@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { from } from 'rxjs';
+//ng bootstrap
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbDateAdapter, NgbDateStruct, NgbDateNativeAdapter} from '@ng-bootstrap/ng-bootstrap';
+
 //Angular Material
 import {MatButtonModule, MatCheckboxModule, MatTabsModule, MatNativeDateModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
@@ -27,10 +32,11 @@ import { MypipePipe } from './pipe/mypipe.pipe';
 import { DetailComponent } from './dashboard/detail/detail.component';
 import { ListUserComponent } from './dashboard/list-user/list-user.component';
 import { DetailPageResolverService } from './service/dashboardServices/detail-page-resolver.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { TestPipe } from './pipe/test.pipe';
 import { TestComponent } from './test/test.component';
-import { from } from 'rxjs';
+import { HeroFormComponent } from './hero-form/hero-form.component';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +50,7 @@ import { from } from 'rxjs';
     ListUserComponent,
     TestPipe,
     TestComponent,
+    HeroFormComponent,
 
     
   ],
@@ -72,6 +79,7 @@ import { from } from 'rxjs';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    {provide: NgbDateAdapter, useClass: NgbDateNativeAdapter},
     DetailPageResolverService,
     MatDatepickerModule
   ],
