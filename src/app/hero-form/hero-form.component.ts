@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero'
+import { DashboardService } from '../service/dashboardServices/dashboard.service';
 
 @Component({
   selector: 'app-hero-form',
@@ -7,18 +8,22 @@ import { Hero } from '../hero'
   styleUrls: ['./hero-form.component.css']
 })
 export class HeroFormComponent implements OnInit {
-
-  constructor() { }
+  dataobj:any;
+  name: any;
+  constructor(private dashSvc: DashboardService) { }
 
   ngOnInit() {
   }
   powers = ['Really Smart', 'Super Flexible','Super Hot', 'Weather Changer'];
 
-  model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
-
+  model = new Hero(18, '', '', '');
+  
   get diagnostic() { return JSON.stringify(this.model); }
 
   newHero() {
-    this.model = new Hero(42, '', this.powers[0]);
+    this.dataobj = this.model;
+    console.log(this.dataobj);
+    //this.dashSvc.testService(this.model);
   }
+  
 }

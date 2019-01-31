@@ -27,6 +27,8 @@ export class DashboardService {
   getUserDetails(id){
     return this.http.get("https://smartklinic.com/kmf-services/provider/fetch/"+ id);
   }
-
+  testService(data){
+    console.log(data);
+  }
 
 }
