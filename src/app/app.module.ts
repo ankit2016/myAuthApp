@@ -35,6 +35,7 @@ import { DetailPageResolverService } from './service/dashboardServices/detail-pa
 
 import { TestPipe } from './pipe/test.pipe';
 import { TestComponent } from './test/test.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { TestComponent } from './test/test.component';
     ListUserComponent,
     TestPipe,
     TestComponent,
+    HeroFormComponent,
 
     
   ],
